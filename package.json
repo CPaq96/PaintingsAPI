@@ -4,7 +4,7 @@
   "description": "An API for information on paintings, artists, and galleries",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
