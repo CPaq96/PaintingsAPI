@@ -93,7 +93,7 @@ const handleAllArtists = app => {
 
 // Returns JSON of all artists whose Nationality matches the provided country
 const handleCountrysArtists = app => {
-    app.get('/artist/:country', (req, resp) => {
+    app.get('/artists/:country', (req, resp) => {
         const regEx = new RegExp(req.params.country, 'i'); // case insensitive RegExp of country
         const matches = data.artists.filter(a => a.Nationality.match(regEx));
         if (matches.length > 0) // If artists were found, return JSON of artists matched
