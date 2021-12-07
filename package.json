@@ -1,0 +1,22 @@
+{
+  "name": "paintingsapi",
+  "version": "1.0.0",
+  "description": "An API for information on paintings, artists, and galleries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CPaq96/PaintingsAPI.git"
+  },
+  "author": "Colton Paquette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CPaq96/PaintingsAPI/issues"
+  },
+  "homepage": "https://github.com/CPaq96/PaintingsAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
