@@ -8,7 +8,7 @@ const handleAllPaintings = app => {
 
 // Returns JSON of the painting with a given id
 const handlePaintingId = app => {
-    app.get('/painting/:id', (req, resp) => {
+    app.get('/paintings/:id', (req, resp) => {
         const match = data.paintings.filter(p => p.paintingID == req.params.id);
         if (match.length > 0) // If painting was found, return JSON of painting
             resp.json(match);
@@ -19,7 +19,7 @@ const handlePaintingId = app => {
 
 // Returns JSON of all paintings whose gallery id that matches the given gallery id
 const handleGalleryPaintings = app => {
-    app.get('/painting/gallery/:id', (req, resp) => {
+    app.get('/paintings/gallery/:id', (req, resp) => {
         const matches = data.paintings.filter(p => p.gallery.galleryID == req.params.id);
         if (matches.length > 0) // If paintings were found, return JSON of paintings
             resp.json(matches);
@@ -30,7 +30,7 @@ const handleGalleryPaintings = app => {
 
 // Returns JSON of all paintings whose artist id matches the given artist id
 const handleArtistPaintings = app => {
-    app.get('/painting/artist/:id', (req, resp) => {
+    app.get('/paintings/artist/:id', (req, resp) => {
         const matches = data.paintings.filter(p => p.artist.artistID == req.params.id);
         if (matches.length > 0) // If paintings were found, return JSON of paintings
             resp.json(matches);
@@ -41,7 +41,7 @@ const handleArtistPaintings = app => {
 
 // Returns JSON of all paintings whos yearOfWork is between the two supplied values(inclusive)
 const handleDateRange = app => {
-    app.get('/painting/year/:min/:max', (req, resp) => {
+    app.get('/paintings/year/:min/:max', (req, resp) => {
         const matches = data.paintings.filter(p => 
             p.yearOfWork >= req.params.min && p.yearOfWork <= req.params.max
         );
@@ -54,7 +54,7 @@ const handleDateRange = app => {
 
 // Returns JSON of all paintings whose title contains the provided text
 const handleTitleSearch = app => {
-    app.get('/painting/title/:text', (req, resp) => {
+    app.get('/paintings/title/:text', (req, resp) => {
         const regEx = new RegExp(req.params.text, 'i'); // case insensitive RegExp of text
         const matches = data.paintings.filter(p => p.title.match(regEx));
         if (matches.length > 0) // If paintings were found, return JSON of paintings
@@ -66,7 +66,7 @@ const handleTitleSearch = app => {
 
 // Returns JSON of all paintings whose dominantColors contain the color name value provided
 const handlePaintingColors = app => {
-    app.get('/painting/color/:name', (req, resp) => {
+    app.get('/paintings/color/:name', (req, resp) => {
         const color = req.params.name.replace("+", " "); // restore spaces
         const regEx = new RegExp(color, 'i'); // case insensitive RegExp of color name
         const matches = [];
