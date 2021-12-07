@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-//app.use('/static', express.static(path.join(__dirname, 'public')));
-
 const router = require('./scripts/router.js');
 // paintings routing
 router.handleAllPaintings(app);
@@ -20,7 +18,7 @@ router.handleCountrysArtists(app);
 router.handleAllGalleries(app);
 router.handleCountryGalleries(app);
 
-let port = 8080;
+let port = 3000;
 app.listen(port, () => {
     console.log(`Server running on *${port}`);
 });
